@@ -1,0 +1,14 @@
+{
+  "full_name": "Jane Doe",
+  "date_of_birth": "1990-04-12",
+  "employee_id": "104233",
+  "email": "jane.doe@example.com",
+  "phone_number": "5551234567",
+  "department": "Engineering",
+  "start_date": "2026-09-01",
+  "employment_type": "Full-time",
+  "emergency_contact_name": "John Doe",
+  "emergency_contact_phone": "5559876543",
+  "signature_name": "Jane Doe",
+  "signature_date": "2026-08-11"
+}

@@ -1,0 +1,28 @@
+[project]
+name = "form-extraction-bench"
+version = "0.1.0"
+description = "Compare Gemini, OpenAI, Claude, and plain OCR on extracting fields from a handwritten/typed form, evaluated via LangSmith."
+requires-python = ">=3.10"
+dependencies = [
+    "langchain>=1.0,<2.0",
+    "langchain-core>=1.0,<2.0",
+    "langgraph>=1.0,<2.0",
+    "langsmith>=0.3.0",
+    "openai>=1.50",
+    "anthropic>=0.40",
+    "google-genai>=1.0",
+    "pytesseract>=0.3.10",
+    "pillow>=10.0",
+    "pdf2image>=1.17",
+    "reportlab>=4.0",
+    "python-dotenv>=1.0",
+    "python-dateutil>=2.9",
+    "pydantic>=2.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["bench*"]
