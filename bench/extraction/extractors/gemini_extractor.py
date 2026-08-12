@@ -22,7 +22,7 @@ RETRY_BACKOFF_SECONDS = 20
 _client: genai.Client | None = None
 
 
-def _get_model() -> str:
+def get_model() -> str:
     # Read lazily, not at import time — otherwise this reads the env before
     # a caller's load_dotenv() has run, silently falling back to the default.
     return os.environ.get("GEMINI_MODEL", DEFAULT_MODEL)
@@ -55,7 +55,7 @@ def _generate_with_retry(png_bytes: bytes):
     for attempt in range(MAX_RETRIES + 1):
         try:
             return _get_client().models.generate_content(
-                model=_get_model(),
+                model=get_model(),
                 contents=[
                     types.Part.from_bytes(data=png_bytes, mime_type="image/png"),
                     EXTRACTION_INSTRUCTIONS,

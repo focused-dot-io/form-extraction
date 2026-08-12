@@ -15,7 +15,7 @@ DEFAULT_MODEL = "gpt-4o"
 _client: OpenAI | None = None
 
 
-def _get_model() -> str:
+def get_model() -> str:
     # Read lazily, not at import time — otherwise this reads the env before
     # a caller's load_dotenv() has run, silently falling back to the default.
     return os.environ.get("OPENAI_MODEL", DEFAULT_MODEL)
@@ -36,7 +36,7 @@ def extract(image_path: str) -> dict:
     b64 = png_bytes_to_b64(png_bytes)
 
     response = _get_client().chat.completions.create(
-        model=_get_model(),
+        model=get_model(),
         messages=[
             {
                 "role": "user",
